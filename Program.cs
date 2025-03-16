@@ -27,6 +27,15 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.MapGet(
+    "/hello",
+    context =>
+    {
+        context.Response.WriteAsync("Hello World");
+        return Task.CompletedTask;
+    }
+);
+
+app.MapGet(
     "/",
     context =>
     {
